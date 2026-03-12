@@ -41,7 +41,7 @@ mapa_entregas = {
 }
 
 mapa_software = {
-    'Nova Ideia': ['n9n', 'Código'],
+    'Nova Ideia': ['n8n', 'Código'],
     'n8n': ['Crias os nós'],
     'Código': ['Configurar NextJS'],
     'Criar os nós': [],
