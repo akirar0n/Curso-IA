@@ -14,7 +14,7 @@ def executar_entregador(grafo, inicio):
             if vizinho not in visitados:
                 visitados.add(vizinho)
                 fila.append(vizinho)
-    print("---------------------------------------")
+    print("\n" + "-"*50)
     
 def executar_dfs_software(grafo, etapa, rastro=None):
     if rastro is None:
@@ -22,16 +22,16 @@ def executar_dfs_software(grafo, etapa, rastro=None):
         rastro.append(etapa)
         print(f"Analizando trilha: {'->'.join(rastro)}")
         
-        if not grafo[etapa]:
-            print(f"SUCESSO! Objetivo encontrado no fim da linha: {etapa}")
+    if not grafo[etapa]:
+        print(f"SUCESSO! Objetivo encontrado no fim da linha: {etapa}")
             
-            return True
+        return True
         
-        for proxima in grafo[etapa]:
-            if executar_dfs_software(grafo, proxima, list(rastro)):
-                
-                return True
-            
+    for proxima in grafo[etapa]:
+        if executar_dfs_software(grafo, proxima, list(rastro)):
+            return True
+        return False
+        
 mapa_entregas = {
     'CD Logístico': ['Rua A', 'Rua B', 'Rua C'],
     'Rua A': ['Casa 1'],
