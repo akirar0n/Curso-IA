@@ -23,14 +23,14 @@ def executar_dfs_software(grafo, etapa, rastro=None):
         print(f"Analizando trilha: {'->'.join(rastro)}")
         
     if not grafo[etapa]:
-        print(f"SUCESSO! Objetivo encontrado no fim da linha: {etapa}")
-            
+        print(f"SUCESSO! Objetivo encontrado no fim da linha: {etapa}") 
         return True
         
     for proxima in grafo[etapa]:
         if executar_dfs_software(grafo, proxima, list(rastro)):
             return True
-        return False
+        
+    return False
         
 mapa_entregas = {
     'CD Logístico': ['Rua A', 'Rua B', 'Rua C'],
@@ -42,7 +42,7 @@ mapa_entregas = {
 
 mapa_software = {
     'Nova Ideia': ['n8n', 'Código'],
-    'n8n': ['Crias os nós'],
+    'n8n': ['Criar os nós'],
     'Código': ['Configurar NextJS'],
     'Criar os nós': [],
     'Configurar NextJS': []
